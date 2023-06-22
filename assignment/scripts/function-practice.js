@@ -70,8 +70,9 @@ console.log('last item in array:', getLast);
 // 7. Function to find a value in an array. Return true if the 
 //    value is found and false otherwise. Use a loop;
 //    DO NOT use Array.includes, Array.indexOf, or Array.find 
+let randomArray = [ 2, 4, 6]
 function find(value, array) {
-for (i = 0; i <= array.length; i++){
+for (i = 0; i <= array.length; i++) {
   if (value === array[i]){
     return true;
   }
@@ -79,33 +80,52 @@ for (i = 0; i <= array.length; i++){
 return false;
 }
 
-console.log('find value in an array:', find(2));
+console.log('find value in an array:', find(2, randomArray));
 // ----------------------
 // Stretch Goals
 // ----------------------
 // 8. Function to check if a letter is the first letter in a 
 //    string. Return true if it is, and false otherwise
-function isFirstLetter(letter, string) {
 
+function isFirstLetter(letter, string) {
+  if (string.length === 0) {
+    return false; 
+  }
+  return string.charAt(0) === letter;
 }
 console.log('isFirstLetter - should say true', isFirstLetter('a', 'apple'));
 console.log('isFirstLetter - should say false', isFirstLetter('z', 'apple'));
 
 // 9. Function to return the sum of all numbers in an array
+let sumAllArray = [-1, -4, -9, -3];
+
 function sumAll() {
   let sum = 0;
   // TODO: loop to add items
-
-  // TODO: return the sum
+for (i = 0; i < sumAllArray.length; i++){
+  sum += sumAllArray[i];
 }
+  // TODO: return the sum
+  return sum;
+}
+
+console.log('sum of the array:', sumAll(sumAllArray));
+
 
 // 10. Function to return a new array of all positive (greater than zero)
 //     numbers contained in an input array. If there are no positive numbers
 //     return an empty array. Note: The input array should not change.
+let allPositiveArray = [];
+
 function allPositive() {
+  for ( i = 0; i < sumAllArray.length; i++){
+    if ( sumAllArray[i] > 0 ) {
+      allPositiveArray.push(sumAllArray[i]);
+    } 
+    }
+  }
 
-}
-
+console.log('this should be an empty array:', allPositiveArray);
 
 // 11. Pick a problem from Edabit(https://edabit.com/) or 
 //     CodeWars(https://www.codewars.com/). Then describe it 
